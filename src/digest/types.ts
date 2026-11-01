@@ -31,6 +31,8 @@ export type Night = {
   rows: DigestRow[];
   // Lines that didn't parse: counted, never thrown.
   badLines: number;
+  // Run lines per status (every parsed line, not one per job). Board link reads this.
+  counts: Record<RunStatus, number>;
 };
 
 // null when runs/<night>.jsonl doesn't exist (the routes answer 404). An empty file is a Night
