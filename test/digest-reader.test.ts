@@ -60,7 +60,7 @@ describe('readNight edge cases', () => {
 
   it('returns an empty night for an empty file', () => {
     writeFileSync(join(dir, '2026-01-01.jsonl'), '');
-    expect(readNight(dir, '2026-01-01')).toEqual({ night: '2026-01-01', rows: [], badLines: 0 });
+    expect(readNight(dir, '2026-01-01')).toEqual({ night: '2026-01-01', rows: [], badLines: 0, counts: { ok: 0, retry: 0, fail: 0 } });
   });
 
   it('counts bad lines, ignores blank lines, never throws', () => {
